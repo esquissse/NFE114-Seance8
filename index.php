@@ -30,7 +30,7 @@
         <td>deux</td>
       </tr>
     </table>
-    <a href="ajout.html" class="btn btn-primary">Ajouter une nouvelle donnée</a>
+    <a href="ajout.php" class="btn btn-primary">Ajouter une nouvelle donnée</a>
     
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>

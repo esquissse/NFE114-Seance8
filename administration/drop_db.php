@@ -24,11 +24,11 @@
   <p>
       <br>
     </p>
-  <a href='../' class="btn btn-info"> <span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
+  <a href=<?php include"../varlocal.php"; echo $path; ?> class="btn btn-info"> <span class="glyphicon glyphicon-arrow-left"></span> Retour</a>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/perso.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/perso.js"></script>
 
   </body>
 </html>

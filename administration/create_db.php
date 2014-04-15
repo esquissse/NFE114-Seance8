@@ -24,12 +24,13 @@
 
     <p>
       <br>
-    </p>
-    <a href='../' class="btn btn-info"> Retour</a>
+   </p>
+   <a href=<?php include "../varlocal.php"; echo $path; ?> class='btn btn-info'> Retour</a>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/perso.js"></script>
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/perso.js"></script>
 
   </body>
 </html>

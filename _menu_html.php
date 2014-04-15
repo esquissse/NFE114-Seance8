@@ -14,18 +14,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href=".">Accueil</a></li>
-        <li><a href="#">Ajouter une donnée</a></li>
+        <li class="active"><a href=<?php include "varlocal.php"; echo $path; ?> >Accueil</a></li>
+        <li><a href=<?php include "varlocal.php"; echo $path."ajout.php"; ?> ><span class="glyphicon glyphicon-plus"></span> Ajouter une donnée</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Administration <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="administration/create_db.php"><span class="glyphicon glyphicon-pencil"></span> Création de la base de données</a></li>
-            <li><a href="administration/drop_db.php"><span class="glyphicon glyphicon-trash"></span> Suppression de la base de données</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Something else here</a></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href=<?php include "varlocal.php"; echo $path."administration/create_db.php"; ?> ><span class="glyphicon glyphicon-pencil"></span> Création de la base de données</a></li>
+            <li><a href=<?php include "varlocal.php"; echo $path."administration/drop_db.php"; ?> ><span class="glyphicon glyphicon-trash"></span> Suppression de la base de données</a></li>
           </ul>
         </li>
       </ul>
