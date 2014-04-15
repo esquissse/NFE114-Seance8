@@ -12,13 +12,16 @@
 
     require "../_menu_html.php";  
     require "../connexion/config.php";
+    
+    // On sélectionne la base de données dans laquelle on veut créer la table
+    connexion();
 
-    $requete = "CREATE DATABASE ".$nom_bdd.";";
+    $requete = "CREATE TABLE config (id SMALLINT(5) PRIMARY KEY, parametre VARCHAR(255), valeur VARCHAR(255));";
 
     $retour = mysql_query($requete) or die("Erreur dans l'exécution de la requête ! " . mysql_error());
 
     if ( $retour )
-      print "La base de données a été créé avec succès";
+      print "La table config a été créé avec succès";
 
     ?>
 

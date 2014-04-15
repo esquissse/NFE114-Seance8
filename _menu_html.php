@@ -20,6 +20,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Administration <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href=<?php include "varlocal.php"; echo $path."administration/create_db.php"; ?> ><span class="glyphicon glyphicon-pencil"></span> Création de la base de données</a></li>
+            <li><a href=<?php include "varlocal.php"; echo $path."administration/create_table.php"; ?> ><span class="glyphicon glyphicon-edit"></span> Création de la table Config</a></li>
             <li><a href=<?php include "varlocal.php"; echo $path."administration/drop_db.php"; ?> ><span class="glyphicon glyphicon-trash"></span> Suppression de la base de données</a></li>
           </ul>
         </li>

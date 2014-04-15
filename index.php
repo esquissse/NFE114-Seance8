@@ -10,7 +10,7 @@
   <body>
     <?php 
       include "_menu_html.php";
-      include "connexion/config.php";
+      // include "connexion/config.php";
     ?>
     <h1>Liste des données insérées dans la table</h1>
     <p>
