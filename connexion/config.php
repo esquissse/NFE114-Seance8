@@ -7,7 +7,11 @@
   function connexion() {
     require $_SERVER['DOCUMENT_ROOT']."/NFE114-Seance8/varlocal.php";
     
-    mysql_select_db($nom_bdd) or die("Erreur dans la sélection de la base de données ! " . mysql_error());
+    if ( !mysql_select_db($nom_bdd) )
+    {
+    	echo "<div class='alert alert-danger'>Impossible de sélectionner la base de données !</div><br><br>";
+    }
+
   }
 
 ?>

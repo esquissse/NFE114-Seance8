@@ -21,29 +21,32 @@
 
       $requete = "SELECT parametre,valeur FROM config";
 
-      connexion();
-
-      $resultat = mysql_query($requete) or die("La requête a échoué : ".mysql_error());
-
-      echo "<table class='table table-striped'>";
-      echo "<thead>";
-      echo "<th>Paramètre</th>";
-      echo "<th>Valeur</th>";
-      echo "</thead>";
-      
-      if (mysql_num_rows($resultat) == 0) {
-        echo "Aucune ligne trouvée, rien à afficher.";
-        exit;
-      } else {
-        while( $tuple = mysql_fetch_assoc($resultat))
-        {
-          echo "<tr>";
-          echo "<td>" . $tuple['parametre'] . "</td>";
-          echo "<td>" . $tuple['valeur'] . "</td>";
-          echo "</tr>";
-        }
+      if ( connexion() ) 
+      {
       }
-      echo "</table>";
+      
+      if ( $resultat = mysql_query($requete) ) /* or die("La requête a échoué : ".mysql_error()); */
+      {
+        echo "<table class='table table-striped'>";
+        echo "<thead>";
+        echo "<th>Paramètre</th>";
+        echo "<th>Valeur</th>";
+        echo "</thead>";
+        
+        if (mysql_num_rows($resultat) == 0) {
+          echo "Aucune ligne trouvée, rien à afficher.";
+          exit;
+        } else {
+          while( $tuple = mysql_fetch_assoc($resultat))
+          {
+            echo "<tr>";
+            echo "<td>" . $tuple['parametre'] . "</td>";
+            echo "<td>" . $tuple['valeur'] . "</td>";
+            echo "</tr>";
+          }
+        }
+        echo "</table>";
+      }
     ?>
     <a href="ajout.php" class="btn btn-primary">Ajouter une nouvelle donnée</a>
     

@@ -44,6 +44,10 @@
     </form>
   </fieldset>
 
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/perso.js"></script>
+
   </body>
 
 </html>
