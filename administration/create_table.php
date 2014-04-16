@@ -16,7 +16,7 @@
     // On sélectionne la base de données dans laquelle on veut créer la table
     connexion();
 
-    $requete = "CREATE TABLE config (id SMALLINT(5) PRIMARY KEY, parametre VARCHAR(255), valeur VARCHAR(255));";
+    $requete = "CREATE TABLE config (id SMALLINT(5) NOT NULL AUTO_INCREMENT PRIMARY KEY, parametre VARCHAR(255), valeur VARCHAR(255));";
 
     $retour = mysql_query($requete) or die("Erreur dans l'exécution de la requête ! " . mysql_error());
 
@@ -28,7 +28,7 @@
     <p>
       <br>
    </p>
-   <a href=<?php include "../varlocal.php"; echo $path; ?> class='btn btn-info'> Retour</a>
+   <a href=<?php include $_SERVER['DOCUMENT_ROOT']."/NFE114-Seance8/varlocal.php"; echo $path; ?> class='btn btn-info'> Retour</a>
 
 
   <script src="../js/jquery.js"></script>

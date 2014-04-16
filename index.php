@@ -10,26 +10,41 @@
   <body>
     <?php 
       include "_menu_html.php";
-      // include "connexion/config.php";
     ?>
     <h1>Liste des données insérées dans la table</h1>
     <p>
       <br />
     </p>
-    <table class="table table-striped">
-      <thead>
-        <th>Clef</th>
-        <th>Valeur</th>
-      </thead>
-      <tr>
-        <td>un</td>
-        <td>deux</td>
-      </tr>
-      <tr>
-        <td>un</td>
-        <td>deux</td>
-      </tr>
-    </table>
+    <?php
+      require $_SERVER['DOCUMENT_ROOT']."/NFE114-Seance8/varlocal.php";
+      include "connexion/config.php";
+
+      $requete = "SELECT parametre,valeur FROM config";
+
+      connexion();
+
+      $resultat = mysql_query($requete) or die("La requête a échoué : ".mysql_error());
+
+      echo "<table class='table table-striped'>";
+      echo "<thead>";
+      echo "<th>Paramètre</th>";
+      echo "<th>Valeur</th>";
+      echo "</thead>";
+      
+      if (mysql_num_rows($resultat) == 0) {
+        echo "Aucune ligne trouvée, rien à afficher.";
+        exit;
+      } else {
+        while( $tuple = mysql_fetch_assoc($resultat))
+        {
+          echo "<tr>";
+          echo "<td>" . $tuple['parametre'] . "</td>";
+          echo "<td>" . $tuple['valeur'] . "</td>";
+          echo "</tr>";
+        }
+      }
+      echo "</table>";
+    ?>
     <a href="ajout.php" class="btn btn-primary">Ajouter une nouvelle donnée</a>
     
     <script src="js/jquery.js"></script>
